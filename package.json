@@ -21,7 +21,8 @@
     "start": "npm run watch",
     "test": "BABEL_ENV=test jest",
     "demo:rebuild": "yarn build && cd demo && rm -rf node_modules && yarn && cd ..",
-    "demo:start": "cd demo && yarn start"
+    "demo:start": "cd demo && yarn start",
+    "postinstall": "tsc --outDir ./build"
   },
   "files": [
     "lib",
