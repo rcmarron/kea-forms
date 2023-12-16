@@ -64,7 +64,7 @@ export type DeepPartialMap<T, F> = {
     ? Set<DeepPartialMap<V, F>>
     : T[P] extends Map<infer K, infer V> // checks for Maps
     ? Map<K, DeepPartialMap<V, F>>
-    : T[P] extends NonAny // checks for primative values
+    : T[P] extends NonAny | undefined // checks for primative values
     ? F
     : DeepPartialMap<T[P], F> // recurse for all non-array and non-primative values
 }
